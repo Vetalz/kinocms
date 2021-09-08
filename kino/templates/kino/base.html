@@ -1,0 +1,140 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{ title }}</title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fontisto@v3.0.4/css/fontisto/fontisto.min.css">
+        <link rel="stylesheet" href="{% static 'kino/css/style.css' %}">
+    </head>
+    <body class="banner">
+        <style>
+            .banner {
+                background-image: url("{% static 'kino/img/banner.jpg' %}");
+            }
+            .banner_top {
+                background-image: url("{% static 'kino/img/banner_top.jpg' %}");
+                background-size: auto 190px;
+            }
+        </style>
+        <div class="container-fluid banner_top">
+            <div class="row">
+                <div class="col-md-2 offset-md-10">
+                    <button type="button" class="btn btn-danger">Логин</button>
+                    <button type="button" class="btn btn-danger">Регистрация</button>
+                </div>
+            </div>
+        </div>
+        <div class="container bg-white">
+            <div class="row">
+                <div class="col-sm-12 col-md-2">
+                    <img src="{% static 'kino/img/logo.jpg' %}" alt="logo" class="logo">
+                </div>
+                <div class="col-sm-12 col-md-5 d-flex align-items-center">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Поиск">
+                        <button class="btn btn-outline-danger" type="submit">Поиск</button>
+                    </form>
+                </div>
+                <div class="col-sm-12 col-md-2 d-flex align-items-center">
+                    <a href="#"><i class="fi fi-facebook ms-4"></i></a>
+                    <a href="#"><i class="fi fi-instagram ms-4"></i></a>
+                    <a href="#"><i class="fi fi-twitter ms-4"></i></a>
+                    <a href="#"><i class="fi fi-youtube-play ms-4"></i></a>
+                </div>
+                <div class="col-sm-12 col-md-3 d-flex align-items-end flex-column">
+                    <span class="phone">(048) 777-77-77</span>
+                    <span class="phone">(097) 777-77-77</span>
+                </div>
+            </div>
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse offset-md-6" id="navbarSupportedContent">
+                    <ul class="navbar-nav ">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">Афиша</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">Расписание</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">Скоро</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">Кинотеатры</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">Акции</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                О кинотеатре
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Новости</a></li>
+                                <li><a class="dropdown-item" href="#">Реклама</a></li>
+                                <li><a class="dropdown-item" href="#">Кафе</a></li>
+                                <li><a class="dropdown-item" href="#">Мобильные приложения</a></li>
+                                <li><a class="dropdown-item" href="#">Контакты</a></li>
+                            </ul>
+                        </li>
+                        <select class="form-select">
+                            <option selected value="">Рус</option>
+                            <option>Укр</option>
+                        </select>
+                    </ul>
+                </div>
+            </nav>
+            {% block content %}
+            {% endblock %}
+        <footer class="container pt-3 bg-dark text-white">
+            <div class="d-flex flex-row justify-content-around">
+                <div class="text-center">
+                    <h5>Мобильные приложения</h5>
+                    <div class="d-flex justify-content-evenly mt-3">
+                        <a href="#"><i class="fi fi-android"></i></a>
+                        <a href="#"><i class="fi fi-apple"></i></a>
+                    </div>
+                    <p class="mt-5">Разработка сайтов: <a href="#">AVADA-MEDIA</a></p>
+                </div>
+                <div>
+                    <h5>Афиша</h5>
+                    <div class="d-flex flex-column">
+                        <a href="#">Расписание</a>
+                        <a href="#">Скоро в прокате</a>
+                        <a href="#">Кинотеатры</a>
+                        <a href="#">Акции</a>
+                    </div>
+                </div>
+                <div>
+                    <h5>О кинотеатре</h5>
+                    <div class="d-flex flex-column">
+                        <a href="#">Новости</a>
+                        <a href="#">Реклама</a>
+                        <a href="#">Кафе-Бар</a>
+                        <a href="#">Контакты</a>
+                    </div>
+                </div>
+                <div>
+                    <a href="#"><i class="fi fi-facebook ms-4"></i></a>
+                    <a href="#"><i class="fi fi-instagram ms-4"></i></a>
+                    <a href="#"><i class="fi fi-twitter ms-4"></i></a>
+                    <a href="#"><i class="fi fi-youtube-play ms-4"></i></a>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-12 text-center">
+                    <p>&copy;KinoCMS 2021, All rights reserved</p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    </body>
+</html>
